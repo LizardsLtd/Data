@@ -1,0 +1,28 @@
+version: {build}
+pull_requests:
+  do_not_increment_build_number: true
+image: Visual Studio 2017
+configuration: Release
+platform: Any CPU
+build_script:
+- ps: "dotnet build --verbosity m --configuration Release; dotnet pack --verbosity m --configuration debug --include-symbols --include-source"
+test_script:
+- ps: Get-ChildItem -Recurse -Filter *.*proj -path test | %{ $_.DirectoryName } | %{ pushd $_; dotnet test; popd; }
+artifacts:
+- path: src\**\*.nupkg
+  name: NuGets
+deploy:
+- provider: NuGet
+  server: https://www.myget.org/F/thelizzard/api/v2
+  api_key:
+    secure: 4vRpBfcYCzNHC1VSvr6whLX3sq7XUJ46VL5E5tbhiKsfP+l4uMM7nvxTjbiu/UWb
+  skip_symbols: false
+  symbol_server: https://www.myget.org/F/thelizzard/symbols/api/v2/package
+  artifact: NuGets
+notifications:
+- provider: Slack
+  incoming_webhook: https://hooks.slack.com/services/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
+  channel: Build
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true
