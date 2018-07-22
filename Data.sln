@@ -5,6 +5,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A6878F19-D808-40A3-AEB5-DEC78FA47D5C}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
+		build.yaml = build.yaml
 		NuGet.Config = NuGet.Config
 	EndProjectSection
 EndProject
@@ -24,7 +25,7 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Data.Azure.Tests", "test\Li
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Data.Tests-fs", "test\Lizards.Data.Tests-fs\Data.Tests-fs.fsproj", "{1C2A7A6A-AE9F-4EB0-806A-6EE1D381B463}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lizards.Data.Types", "src\Lizards.Data.Types\Lizards.Data.Types.csproj", "{62CDE813-E4F3-4098-9B7D-2C94D7742507}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lizards.Data.Types", "src\Lizards.Data.Types\Lizards.Data.Types.csproj", "{62CDE813-E4F3-4098-9B7D-2C94D7742507}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
