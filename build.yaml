@@ -22,9 +22,9 @@ phases:
       SonarQube: Sonarqube
       projectKey: Transferuj
       projectName: Transferuj
-      extraProperties: |
-	   sonar.cs.opencover.reportsPaths=/opt/vsts/work/1/s/test/Lizards.Data.Azure.Tests/coverage.opencover.xml
-	   sonar.cs.opencover.reportsPaths=/opt/vsts/work/1/s/test/Lizards.Data.Tests/coverage.opencover.xml
+      extraProperties: |  
+     sonar.cs.opencover.reportsPaths=/opt/vsts/work/1/s/test/Lizards.Data.Azure.Tests/coverage.opencover.xml  
+     sonar.cs.opencover.reportsPaths=/opt/vsts/work/1/s/test/Lizards.Data.Tests/coverage.opencover.xml
 
   - task: DotNetCoreCLI@2
     displayName: Build
