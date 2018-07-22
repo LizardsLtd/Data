@@ -33,12 +33,12 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Lizards.Maybe" Version="0.3.3" />
-    <PackageReference Include="NLog" Version="4.5.0-rc06" />
+    <PackageReference Include="NLog" Version="4.5.7" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta006" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.4.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
     <PackageReference Include="System.Security.Claims" Version="4.3.0" />
     <PackageReference Include="System.Threading.Tasks.Parallel" Version="4.3.0" />
-    <PackageReference Include="System.ValueTuple" Version="4.4.0" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="VerbalExpressions-netstandard" Version="0.3.0" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
