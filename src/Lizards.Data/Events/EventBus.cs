@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Lizards.Data.Events
+﻿namespace Lizards.Data.Events
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
     public sealed class EventBus : IEventBus
     {
         private readonly List<(Type, object)> subscribers;

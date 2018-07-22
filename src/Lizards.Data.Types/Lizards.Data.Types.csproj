@@ -5,4 +5,8 @@
     <Version>0.19.0</Version>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="VerbalExpressions-netstandard16" Version="0.2.0" />
+  </ItemGroup>
+
 </Project>

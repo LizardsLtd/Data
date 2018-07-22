@@ -2,6 +2,6 @@
 {
     public interface IQuery<out TPayload, TParameterNo1> : IsQuery
     {
-        TPayload Execute(TParameterNo1);
+        TPayload Execute(TParameterNo1 param1);
     }
 }

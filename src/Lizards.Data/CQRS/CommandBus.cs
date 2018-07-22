@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Lizards.Data.CQRS
+﻿namespace Lizards.Data.CQRS
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
     public sealed class CommandBus : ICommandBus
     {
         private readonly IEnumerable<ICommandHandler> commandHandlers;
