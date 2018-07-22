@@ -256,3 +256,4 @@ paket-files/
 /nuget.exe
 /coverage.xml
 /.vscode
+/build.yaml
