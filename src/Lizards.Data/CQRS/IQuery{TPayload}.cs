@@ -1,8 +1,7 @@
-﻿namespace Lizards.Data.CQRS
+namespace Lizards.Data.CQRS
 {
-
-    public interface IQuery<out TPayload> : IsQuery
-    {
-        TPayload Execute();
-    }
+  public interface IQuery<out TPayload> : IsQuery
+  {
+    TPayload Execute();
+  }
 }
