@@ -4,7 +4,7 @@
     <Copyright>Picums 2016 - 2017</Copyright>
     <AssemblyTitle>Data.InMemory</AssemblyTitle>
     <VersionPrefix>0.1.0</VersionPrefix>
-    <Version>0.20.0</Version>
+    <Version>0.23.0</Version>
     <AssemblyName>Lizards.Data.InMemory</AssemblyName>
     <PackageTags>data;Picums</PackageTags>
     <RepositoryType>git</RepositoryType>
@@ -19,11 +19,12 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wpa81</PackageTargetFallback>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <DebugType>full</DebugType>
     <RootNamespace>Lizards.Data.InMemory</RootNamespace>
+    <Authors>Szymon M Sasin</Authors>
   </PropertyGroup>
 
   <ItemGroup>

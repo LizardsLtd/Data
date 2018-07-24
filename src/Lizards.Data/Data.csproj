@@ -4,7 +4,7 @@
     <Copyright>Picums 2016 - 2017</Copyright>
     <AssemblyTitle>Data</AssemblyTitle>
     <VersionPrefix>0.1.0</VersionPrefix>
-    <Version>0.20.0</Version>
+    <Version>0.23.0</Version>
     <AssemblyName>Lizards.Data</AssemblyName>
     <PackageTags>data;Picums</PackageTags>
     <RepositoryType>git</RepositoryType>
@@ -21,7 +21,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <DebugType>full</DebugType>
-    <Authors>Picums</Authors>
+    <Authors>Szymon M Sasin</Authors>
     <RootNamespace>Lizards.Data</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
@@ -33,6 +33,7 @@
     </AdditionalFiles>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Lamar" Version="1.1.1" />
     <PackageReference Include="Lizards.Maybe" Version="0.3.3" />
     <PackageReference Include="NLog" Version="4.5.7" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008" />
