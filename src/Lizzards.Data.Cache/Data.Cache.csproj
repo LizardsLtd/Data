@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.20.0</Version>
+    <PackageId>Lizzards.Data.Cache</PackageId>
+    <Company>Lizzards</Company>
+    <Authors>Lizzards</Authors>
+    <Product>Lizzards.Data</Product>
+    <Copyright>Lizzards 2018</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lizards.Data\Data.csproj" />
+  </ItemGroup>
+
+</Project>

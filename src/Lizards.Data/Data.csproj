@@ -18,7 +18,7 @@
     <ProjectGuid>9A19103F-16F7-4668-BE54-9A1E7A4F7554</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <DebugType>full</DebugType>
     <Authors>Picums</Authors>
@@ -35,7 +35,7 @@
   <ItemGroup>
     <PackageReference Include="Lizards.Maybe" Version="0.3.3" />
     <PackageReference Include="NLog" Version="4.5.7" />
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta006" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
     <PackageReference Include="System.Security.Claims" Version="4.3.0" />
     <PackageReference Include="System.Threading.Tasks.Parallel" Version="4.3.0" />
