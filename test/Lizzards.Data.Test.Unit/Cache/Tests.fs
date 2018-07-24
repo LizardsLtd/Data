@@ -4,10 +4,12 @@ open System
 open Xunit
 open Lizards.Data.CQRS
 
-//type SimpleQuery() =
-//  interface IQuery<string> with
-//    memeber this.Execute() =
-//      Guid.NewGuid().ToString()
+type SimpleQuery =
+    member this.HasBeenCalled() =
+        false
+    interface IQuery<string> with
+        member this.Execute() =
+            "this is test"
 
 [<Fact>]
 let ``My test`` () =
