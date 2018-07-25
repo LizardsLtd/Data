@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Cache\Tests.fs" />
+    <Compile Include="Cache\IAsyncQueryFixture.fs" />
+    <Compile Include="Cache\IQueryFixture.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

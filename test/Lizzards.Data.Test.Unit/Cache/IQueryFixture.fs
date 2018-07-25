@@ -1,4 +1,4 @@
-module Lizzards.Data.Test.Unit.Cache.Queries
+module Lizzards.Data.Test.Unit.Cache.IQueryFixture
 
 open System
 open Xunit
