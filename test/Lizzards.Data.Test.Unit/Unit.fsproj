@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FsUnit" Version="3.1.0" />
+    <PackageReference Include="FsUnit.xUnit" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.1.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
@@ -19,8 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Lizards.Data.Azure\Data.Azure.csproj" />
+    <ProjectReference Include="..\..\src\Lizards.Data.InMemory\Data.InMemory.csproj" />
     <ProjectReference Include="..\..\src\Lizards.Data\Data.csproj" />
-    <ProjectReference Include="..\..\src\Lizzards.Data.Cache\Data.Cache.csproj" />
+    <ProjectReference Include="..\..\src\Lizzards.Data.Cache\Data.Cache.fsproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Lizzards.Data.Cache</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="DistributedCache.fs" />
+    <Compile Include="CachedQueryDecorator.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lizards.Data\Data.csproj" />
+  </ItemGroup>
+
+</Project>
