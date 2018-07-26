@@ -19,17 +19,17 @@ type SingleAsyncQuery() =
 type SingleAsyncQuery1() =
     interface IAsyncQuery<string,string> with
         member this.Execute(param1: string) =
-            Guid.NewGuid().ToString()
+            Task.FromResult(Guid.NewGuid().ToString())
 
 type SingleAsyncQuery2() =
     interface IAsyncQuery<string,string,string> with
         member this.Execute(param1: string,param2:string) =
-            Guid.NewGuid().ToString()
+            Task.FromResult(Guid.NewGuid().ToString())
 
 type SingleAsyncQuery3() =
     interface IAsyncQuery<string,string,string,string> with
         member this.Execute(param1: string,param2:string, param3:string) =
-            Guid.NewGuid().ToString()
+            Task.FromResult(Guid.NewGuid().ToString())
 
 let cacheOptions = new MemoryDistributedCacheOptions()
 let cache = new MemoryDistributedCache(Options.Create(cacheOptions))
@@ -44,16 +44,16 @@ let ``Result should be GUID`` () =
 [<Fact>]
 let ``Results from query should be difference every time`` () =
   let query: IAsyncQuery<string> = new SingleAsyncQuery() :> IAsyncQuery<string>
-  let first_result = query.Execute()
-  let second_result = query.Execute()
+  let first_result = query.Execute() |> Async.AwaitTask |> Async.RunSynchronously
+  let second_result = query.Execute() |> Async.AwaitTask |> Async.RunSynchronously
   first_result |> should not' (equal second_result)
 
 [<Fact>]
 let ``Results from cached query should be the same every time`` () =
   let query = new SingleAsyncQuery()
   let cachedQuery = new AsyncCachedQueryDecorator<string>(query, cache) :> IAsyncQuery<string>
-  let first_result = cachedQuery.Execute()
-  let second_result = cachedQuery.Execute()
+  let first_result = cachedQuery.Execute() |> Async.AwaitTask |> Async.RunSynchronously
+  let second_result = cachedQuery.Execute() |> Async.AwaitTask |> Async.RunSynchronously
   first_result |> should equal second_result
 
 [<Theory>]
@@ -62,8 +62,8 @@ let ``Results from cached query should be the same every time`` () =
 let ``Results from cached query with 1 parameter should be`` (key1, key2, expectedResult) =
   let query = new SingleAsyncQuery1()
   let cachedQuery = new AsyncCachedQueryDecorator<string, string>(query, cache) :> IAsyncQuery<string, string>
-  let first_result = cachedQuery.Execute(key1)
-  let second_result = cachedQuery.Execute(key2)
+  let first_result = cachedQuery.Execute(key1) |> Async.AwaitTask |> Async.RunSynchronously
+  let second_result = cachedQuery.Execute(key2) |> Async.AwaitTask |> Async.RunSynchronously
   let actualResult = first_result.Equals(second_result)
   actualResult |> should equal expectedResult
 
@@ -73,8 +73,8 @@ let ``Results from cached query with 1 parameter should be`` (key1, key2, expect
 let ``Results from cached query with 2 parameter should be`` (key1, key2, expectedResult) =
   let query = new SingleAsyncQuery2()
   let cachedQuery = new AsyncCachedQueryDecorator<string, string, string>(query, cache) :> IAsyncQuery<string, string, string>
-  let first_result = cachedQuery.Execute(key1, key1)
-  let second_result = cachedQuery.Execute(key2, key2)
+  let first_result = cachedQuery.Execute(key1, key1) |> Async.AwaitTask |> Async.RunSynchronously
+  let second_result = cachedQuery.Execute(key2, key2) |> Async.AwaitTask |> Async.RunSynchronously
   let actualResult = first_result.Equals(second_result)
   actualResult |> should equal expectedResult
 
@@ -84,7 +84,7 @@ let ``Results from cached query with 2 parameter should be`` (key1, key2, expect
 let ``Results from cached query with 3 parameter should be`` (key1, key2, expectedResult) =
   let query = new SingleAsyncQuery3()
   let cachedQuery = new AsyncCachedQueryDecorator<string, string, string, string>(query, cache) :> IAsyncQuery<string, string, string, string>
-  let first_result = cachedQuery.Execute(key1,key1,key1)
-  let second_result = cachedQuery.Execute(key2,key2,key2)
+  let first_result = cachedQuery.Execute(key1,key1,key1) |> Async.AwaitTask |> Async.RunSynchronously
+  let second_result = cachedQuery.Execute(key2,key2,key2) |> Async.AwaitTask |> Async.RunSynchronously
   let actualResult = first_result.Equals(second_result)
   actualResult |> should equal expectedResult

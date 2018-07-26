@@ -8,19 +8,15 @@ open System.Threading.Tasks
 [<AbstractClass>]
 type AsyncCacheDecoratorBase<'TReturnType>(cache: IDistributedCache) =
   member private this.Cache = new DistributedCache(cache)
-  member this.GetOrCreate (key:string) (fallback: unit -> Task<'TReturnType>) =
+  member this.GetOrCreate (key:string) (fallback: unit -> Task<'TReturnType>): Task<'TReturnType>  =
     let savedInCache = this.Cache.ContainsKey key
     let result: 'TReturnType =
         match savedInCache with
         | true -> this.Cache.GetAsync<'TReturnType> key
         | false ->
-            let result =
-                async {
-                    let! falbackResult = fallback() |> Async.AwaitTask
-                    return falbackResult
-                }
-            this.Cache.Set key result
-            result
+            let fallbackResult: 'TReturnType = fallback() |> Async.AwaitTask |> Async.RunSynchronously
+            this.Cache.Set key fallbackResult
+            fallbackResult
     Task.FromResult result
 
 type AsyncCachedQueryDecorator<'TPayload>(internalQuery: IAsyncQuery<'TPayload>, cache: IDistributedCache) =
