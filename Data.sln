@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lizards.Data.Types", "src\L
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Unit", "test\Lizzards.Data.Test.Unit\Unit.fsproj", "{B71BE7B2-9B15-48A8-BB26-33A90636D5E6}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Data.Cache", "src\Lizzards.Data.Cache\Data.Cache.fsproj", "{27911E74-1387-412E-8533-8F960127A894}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Data.Cache", "src\Lizzards.Data.Cache\Data.Cache.fsproj", "{27911E74-1387-412E-8533-8F960127A894}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
