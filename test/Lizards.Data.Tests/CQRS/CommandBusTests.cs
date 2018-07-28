@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
-using Lizards.Data.CQRS;
-using Lizards.Data.Tests.Mocks;
+using Lizzards.Data.CQRS;
+using Lizzards.Data.Tests.Mocks;
 using Xunit;
 
-namespace Lizards.Data.Tests.CQRS
+namespace Lizzards.Data.Tests.CQRS
 {
     public sealed class CommandBusTests
     {

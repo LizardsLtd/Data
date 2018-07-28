@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 
-namespace Lizards.Data.Azure
+namespace Lizzards.Data.Azure
 {
     internal sealed class AzureDatabaseCreator
     {

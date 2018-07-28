@@ -1,6 +1,6 @@
 ﻿using NLog;
 
-namespace Lizards.Data.CQRS.Queries
+namespace Lizzards.Data.CQRS.Queries
 {
     public interface IWithLogger<TResult>
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Lizards.Data.Domain;
+using Lizzards.Data.Domain;
 
-namespace Lizards.Data.CQRS.DataAccess
+namespace Lizzards.Data.CQRS.DataAccess
 {
     public interface IDataCollectionReader<TSource> where TSource : IAggregateRoot
     {

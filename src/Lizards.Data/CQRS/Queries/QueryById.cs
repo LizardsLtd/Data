@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 using NLog;
-using Lizards.Data.CQRS.DataAccess;
-using Lizards.Data.Domain;
+using Lizzards.Data.CQRS.DataAccess;
+using Lizzards.Data.Domain;
 using Lizards.Maybe;
 
-namespace Lizards.Data.CQRS.Queries
+namespace Lizzards.Data.CQRS.Queries
 {
     public sealed class QueryById<TPayload> : IAsyncQuery<Maybe<TPayload>>
         where TPayload : IAggregateRoot

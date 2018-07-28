@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Azure.Documents.Client;
 using NLog;
-using Lizards.Data.CQRS.DataAccess;
-using Lizards.Data.Domain;
+using Lizzards.Data.CQRS.DataAccess;
+using Lizzards.Data.Domain;
 using Lizards.Maybe;
 
-namespace Lizards.Data.Azure
+namespace Lizzards.Data.Azure
 {
     internal sealed class AzureDocumentDbDataReader<T> : IDataReader<T>
         where T : IAggregateRoot

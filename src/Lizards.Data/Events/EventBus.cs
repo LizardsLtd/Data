@@ -1,4 +1,4 @@
-﻿namespace Lizards.Data.Events
+﻿namespace Lizzards.Data.Events
 {
     using System;
     using System.Collections.Generic;

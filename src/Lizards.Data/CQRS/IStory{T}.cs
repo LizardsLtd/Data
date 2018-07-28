@@ -1,4 +1,4 @@
-﻿namespace Lizards.Data.CQRS
+﻿namespace Lizzards.Data.CQRS
 {
     using System.Threading.Tasks;
 

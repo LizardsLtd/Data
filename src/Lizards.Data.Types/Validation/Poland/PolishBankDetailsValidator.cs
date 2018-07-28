@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using CSharpVerbalExpressions;
 
-namespace Lizards.Data.Types.Services.Poland
+namespace Lizzards.Data.Types.Services.Poland
 {
     public sealed class PolishBankDetailsValidator : IBankDetailsValidator
     {

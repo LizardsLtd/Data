@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lizards.Data.Domain
+namespace Lizzards.Data.Domain
 {
     public interface IAggregateRoot
     {

@@ -1,11 +1,11 @@
-﻿namespace Lizards.Data.DependencyInjection
+﻿namespace Lizzards.Data.DependencyInjection
 {
     using Lamar;
     using Lamar.Scanning;
     using Lamar.Scanning.Conventions;
-    using Lizards.Data.CQRS;
-    using Lizards.Data.CQRS.DataAccess;
-    using Lizards.Data.Events;
+    using Lizzards.Data.CQRS;
+    using Lizzards.Data.CQRS.DataAccess;
+    using Lizzards.Data.Events;
 
     public sealed class CqrsConvention : IRegistrationConvention
     {

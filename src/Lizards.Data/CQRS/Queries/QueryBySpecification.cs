@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using NLog;
-using Lizards.Data.CQRS.DataAccess;
-using Lizards.Data.Domain;
+using Lizzards.Data.CQRS.DataAccess;
+using Lizzards.Data.Domain;
 
-namespace Lizards.Data.CQRS.Queries
+namespace Lizzards.Data.CQRS.Queries
 {
     public sealed class QueryBySpecification<TPayload> : IAsyncQuery<IEnumerable<TPayload>>
         where TPayload : IAggregateRoot

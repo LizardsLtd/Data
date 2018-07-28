@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Extensions.Options;
 using NLog;
-using Lizards.Data.CQRS.DataAccess;
+using Lizzards.Data.CQRS.DataAccess;
 
-namespace Lizards.Data.Azure
+namespace Lizzards.Data.Azure
 {
     public sealed class AzureDocumentDbContextInitialiser : IDataContextInitialiser
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Lizards.Data.Types.Services
+namespace Lizzards.Data.Types.Services
 {
     public interface IBankDetailsValidator
     {

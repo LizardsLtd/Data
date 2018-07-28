@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Lizards.Data.Events
+namespace Lizzards.Data.Events
 {
     public sealed class EventBusSynchronusConverter<T>
         where T : IEvent

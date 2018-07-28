@@ -1,7 +1,7 @@
-module Lizards.Tests.Data.EventBusCanSelectHandler
+module Lizzards.Tests.Data.EventBusCanSelectHandler
 
     open System
-    open Lizards.Data.Events
+    open Lizzards.Data.Events
     open Xunit
     open FakeItEasy
 

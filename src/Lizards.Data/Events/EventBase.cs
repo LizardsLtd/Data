@@ -1,7 +1,6 @@
-﻿using System;
-
-namespace Lizards.Data.Events
+﻿namespace Lizzards.Data.Events
 {
+    using System;
 
     public abstract class EventBase : IEvent
     {

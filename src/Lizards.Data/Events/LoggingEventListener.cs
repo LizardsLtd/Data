@@ -1,6 +1,6 @@
 ﻿using NLog;
 
-namespace Lizards.Data.Events
+namespace Lizzards.Data.Events
 {
     public sealed class LoggingEventListener
     {

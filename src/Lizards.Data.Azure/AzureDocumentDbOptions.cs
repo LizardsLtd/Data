@@ -1,10 +1,10 @@
-﻿namespace Lizards.Data.Azure
+﻿namespace Lizzards.Data.Azure
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Security;
-    using Lizards.Data.Domain;
+    using Lizzards.Data.Domain;
     using Microsoft.Azure.Documents.Client;
     using Microsoft.Extensions.Configuration;
     using NLog;

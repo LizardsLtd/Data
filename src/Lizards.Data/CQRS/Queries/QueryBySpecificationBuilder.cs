@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Lizards.Data.CQRS.DataAccess;
-using Lizards.Data.Domain;
+using Lizzards.Data.CQRS.DataAccess;
+using Lizzards.Data.Domain;
 
-namespace Lizards.Data.CQRS.Queries
+namespace Lizzards.Data.CQRS.Queries
 {
     public sealed class QueryBySpecificationBuilder<TPayload>
         : QueryBuilder<IWithSpecification<IAsyncQuery<IEnumerable<TPayload>>, TPayload>>

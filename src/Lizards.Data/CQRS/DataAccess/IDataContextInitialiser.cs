@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Lizards.Data.CQRS.DataAccess
+namespace Lizzards.Data.CQRS.DataAccess
 {
     /// <summary>
     /// Allows to initialize data store at load.

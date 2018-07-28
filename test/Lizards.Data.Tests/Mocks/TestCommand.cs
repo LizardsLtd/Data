@@ -1,7 +1,7 @@
 ﻿using System;
-using Lizards.Data.CQRS;
+using Lizzards.Data.CQRS;
 
-namespace Lizards.Data.Tests.Mocks
+namespace Lizzards.Data.Tests.Mocks
 {
     internal sealed class TestCommand : ICommand
     {

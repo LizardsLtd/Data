@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Lizards.Data.Events
+namespace Lizzards.Data.Events
 {
     /// <summary>
     /// Implementation of publisher/subscriber pattern used to handle no modificing events.

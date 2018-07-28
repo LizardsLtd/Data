@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Lizards.Data.CQRS.DataAccess;
-using Lizards.Data.Domain;
+using Lizzards.Data.CQRS.DataAccess;
+using Lizzards.Data.Domain;
 using Lizards.Maybe;
 
-namespace Lizards.Data.CQRS.Queries
+namespace Lizzards.Data.CQRS.Queries
 {
     public sealed class QueryByIdBuilder<TPayload>
         : QueryBuilder<IWithId<IAsyncQuery<Maybe<TPayload>>>>,

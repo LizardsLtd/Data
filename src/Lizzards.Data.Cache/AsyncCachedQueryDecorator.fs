@@ -1,6 +1,6 @@
 namespace Lizzards.Data.Cache
 
-open Lizards.Data.CQRS
+open Lizzards.Data.CQRS
 open Microsoft.Extensions.Caching.Distributed
 open System
 open System.Threading.Tasks

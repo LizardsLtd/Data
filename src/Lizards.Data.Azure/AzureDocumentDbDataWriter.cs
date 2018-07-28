@@ -3,10 +3,10 @@ using System.Threading.Tasks;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using NLog;
-using Lizards.Data.CQRS.DataAccess;
-using Lizards.Data.Domain;
+using Lizzards.Data.CQRS.DataAccess;
+using Lizzards.Data.Domain;
 
-namespace Lizards.Data.Azure
+namespace Lizzards.Data.Azure
 {
     internal class AzureDocumentDbDataWriter<T>
         : IDataWriter<T>

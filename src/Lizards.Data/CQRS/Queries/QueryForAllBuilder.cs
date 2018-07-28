@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using Lizards.Data.Domain;
+using Lizzards.Data.Domain;
 
-namespace Lizards.Data.CQRS.Queries
+namespace Lizzards.Data.CQRS.Queries
 {
     public sealed class QueryForAllBuilder<TPayload>
         : QueryBuilder<IAsyncQuery<IQueryable<TPayload>>>

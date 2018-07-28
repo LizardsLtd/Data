@@ -1,4 +1,4 @@
-﻿namespace Lizards.Data.CQRS
+﻿namespace Lizzards.Data.CQRS
 {
     public interface IQuery<out TPayload, TParameterNo1, TParameterNo2, TParameterNo3> : IsQuery
     {

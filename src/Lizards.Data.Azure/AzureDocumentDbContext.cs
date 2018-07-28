@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Extensions.Options;
 using NLog;
-using Lizards.Data.CQRS.DataAccess;
-using Lizards.Data.Domain;
-using Lizards.Data.Events;
+using Lizzards.Data.CQRS.DataAccess;
+using Lizzards.Data.Domain;
+using Lizzards.Data.Events;
 
-namespace Lizards.Data.Azure
+namespace Lizzards.Data.Azure
 {
     public sealed class AzureDocumentDbContext : IDataContext
     {

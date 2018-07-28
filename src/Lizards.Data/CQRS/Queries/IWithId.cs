@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lizards.Data.CQRS.Queries
+namespace Lizzards.Data.CQRS.Queries
 {
     public interface IWithId<TResult>
     {

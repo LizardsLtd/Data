@@ -1,11 +1,11 @@
-﻿namespace Lizards.Data.InMemory
+﻿namespace Lizzards.Data.InMemory
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using Lizards.Data.CQRS.DataAccess;
-    using Lizards.Data.Domain;
+    using Lizzards.Data.CQRS.DataAccess;
+    using Lizzards.Data.Domain;
     using Lizards.Maybe;
 
     public sealed class InMemoryReader<T> : IDataReader<T>

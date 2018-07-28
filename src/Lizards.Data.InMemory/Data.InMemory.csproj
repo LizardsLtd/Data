@@ -4,8 +4,8 @@
     <Copyright>Picums 2016 - 2017</Copyright>
     <AssemblyTitle>Data.InMemory</AssemblyTitle>
     <VersionPrefix>0.1.0</VersionPrefix>
-    <Version>0.23.0</Version>
-    <AssemblyName>Lizards.Data.InMemory</AssemblyName>
+    <Version>0.24.0</Version>
+    <AssemblyName>Lizzards.Data.InMemory</AssemblyName>
     <PackageTags>data;Picums</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Picums/Mvc</RepositoryUrl>
@@ -20,10 +20,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <DebugType>full</DebugType>
-    <RootNamespace>Lizards.Data.InMemory</RootNamespace>
+    <RootNamespace>Lizzards.Data.InMemory</RootNamespace>
     <Authors>Szymon M Sasin</Authors>
+    <PackageId>Lizzards.Data.InMemory</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

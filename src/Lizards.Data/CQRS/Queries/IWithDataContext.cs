@@ -1,6 +1,6 @@
-﻿using Lizards.Data.CQRS.DataAccess;
+﻿using Lizzards.Data.CQRS.DataAccess;
 
-namespace Lizards.Data.CQRS.Queries
+namespace Lizzards.Data.CQRS.Queries
 {
     public interface IWithDataContext<TResult>
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using Lizards.Data.Domain;
+using Lizzards.Data.Domain;
 
-namespace Lizards.Data.CQRS.DataAccess
+namespace Lizzards.Data.CQRS.DataAccess
 {
     /// <summary>
     /// Universal access to data store

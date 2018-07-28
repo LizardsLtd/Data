@@ -1,4 +1,4 @@
-﻿namespace Lizards.Data.Types
+﻿namespace Lizzards.Data.Types
 {
     public sealed class Address
     {

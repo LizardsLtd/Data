@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using Lizards.Data.CQRS;
+using Lizzards.Data.CQRS;
 using Should.Fluent;
 
-namespace Lizards.Data.Tests.Mocks
+namespace Lizzards.Data.Tests.Mocks
 {
     internal sealed class TestCommandHandler : ICommandHandler<TestCommand>
     {

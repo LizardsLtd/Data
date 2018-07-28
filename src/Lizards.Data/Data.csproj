@@ -4,8 +4,8 @@
     <Copyright>Picums 2016 - 2017</Copyright>
     <AssemblyTitle>Data</AssemblyTitle>
     <VersionPrefix>0.1.0</VersionPrefix>
-    <Version>0.23.0</Version>
-    <AssemblyName>Lizards.Data</AssemblyName>
+    <Version>0.24.0</Version>
+    <AssemblyName>Lizzards.Data</AssemblyName>
     <PackageTags>data;Picums</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Picums/Mvc</RepositoryUrl>
@@ -22,7 +22,8 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <DebugType>full</DebugType>
     <Authors>Szymon M Sasin</Authors>
-    <RootNamespace>Lizards.Data</RootNamespace>
+    <RootNamespace>Lizzards.Data</RootNamespace>
+    <PackageId>Lizzards.Data</PackageId>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="stylecop.json" />

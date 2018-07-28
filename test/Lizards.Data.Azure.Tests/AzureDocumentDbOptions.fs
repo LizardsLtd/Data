@@ -1,12 +1,12 @@
-module Lizards.Data.Azure.Tests.AzureDocumentDbOptionsTests
+module Lizzards.Data.Azure.Tests.AzureDocumentDbOptionsTests
 
     open System
     open System.Linq
     open Xunit
     open FsUnit.Xunit
     open Microsoft.Extensions.Configuration
-    open Lizards.Data.Domain
-    open Lizards.Data.Azure
+    open Lizzards.Data.Domain
+    open Lizzards.Data.Azure
 
     type User =
         interface IAggregateRoot with

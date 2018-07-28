@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Lizards.Data.CQRS.DataAccess;
-using Lizards.Data.Domain;
+using Lizzards.Data.CQRS.DataAccess;
+using Lizzards.Data.Domain;
 
-namespace Lizards.Data.InMemory
+namespace Lizzards.Data.InMemory
 {
     internal class InMemoryWriter<T> : IDataWriter<T> where T : IAggregateRoot
     {

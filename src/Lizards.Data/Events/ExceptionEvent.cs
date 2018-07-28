@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lizards.Data.Events
+namespace Lizzards.Data.Events
 {
     public sealed class ExceptionEvent : EventBase
     {

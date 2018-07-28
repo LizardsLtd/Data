@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Lizards.Data.CQRS
+namespace Lizzards.Data.CQRS
 {
     public interface ICommandHandler : IDisposable { }
 

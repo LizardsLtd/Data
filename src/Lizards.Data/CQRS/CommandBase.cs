@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lizards.Data.CQRS
+namespace Lizzards.Data.CQRS
 {
     public abstract class CommandBase : ICommand
     {

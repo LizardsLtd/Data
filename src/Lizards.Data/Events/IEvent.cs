@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lizards.Data.Events
+namespace Lizzards.Data.Events
 {
     /// <summary>
     /// Basic interface to identitfy for EventBus

@@ -1,7 +1,7 @@
 ﻿using System;
-using Lizards.Data.Domain;
+using Lizzards.Data.Domain;
 
-namespace Lizards.Data.Tests.Mocks
+namespace Lizzards.Data.Tests.Mocks
 {
     internal sealed class SimpleAggregateRoot : IAggregateRoot
     {

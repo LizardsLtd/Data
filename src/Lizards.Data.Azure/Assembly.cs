@@ -1,3 +1,3 @@
 ﻿using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("Lizards.Data.Azure.Tests")]
+[assembly: InternalsVisibleTo("Lizzards.Data.Azure.Tests")]
