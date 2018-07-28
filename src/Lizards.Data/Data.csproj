@@ -4,7 +4,7 @@
     <Copyright>Picums 2016 - 2017</Copyright>
     <AssemblyTitle>Data</AssemblyTitle>
     <VersionPrefix>0.1.0</VersionPrefix>
-    <Version>0.24.0</Version>
+    <Version>0.25.0</Version>
     <AssemblyName>Lizzards.Data</AssemblyName>
     <PackageTags>data;Picums</PackageTags>
     <RepositoryType>git</RepositoryType>
@@ -35,7 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Lamar" Version="1.1.1" />
-    <PackageReference Include="Lizards.Maybe" Version="0.3.3" />
+    <PackageReference Include="Lizzards.Maybe" Version="0.3.3" />
     <PackageReference Include="NLog" Version="4.5.7" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />

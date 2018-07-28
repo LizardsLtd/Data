@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using NLog;
 using Lizzards.Data.CQRS.DataAccess;
 using Lizzards.Data.Domain;
-using Lizards.Maybe;
+using Lizzards.Maybe;
 
 namespace Lizzards.Data.CQRS.Queries
 {

@@ -6,7 +6,7 @@
     using System.Threading.Tasks;
     using Lizzards.Data.CQRS.DataAccess;
     using Lizzards.Data.Domain;
-    using Lizards.Maybe;
+    using Lizzards.Maybe;
 
     public sealed class InMemoryReader<T> : IDataReader<T>
         where T : IAggregateRoot

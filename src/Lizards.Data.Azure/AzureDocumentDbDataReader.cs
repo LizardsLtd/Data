@@ -6,7 +6,7 @@ using Microsoft.Azure.Documents.Client;
 using NLog;
 using Lizzards.Data.CQRS.DataAccess;
 using Lizzards.Data.Domain;
-using Lizards.Maybe;
+using Lizzards.Maybe;
 
 namespace Lizzards.Data.Azure
 {
