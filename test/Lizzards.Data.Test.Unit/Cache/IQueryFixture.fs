@@ -2,7 +2,7 @@ module Lizzards.Data.Test.Unit.Cache.IQueryFixture
 
 open System
 open Xunit
-open Lizards.Data.CQRS
+open Lizzards.Data.CQRS
 open Lizzards.Data.Cache
 open Microsoft.Extensions.Caching.Memory
 open FsUnit

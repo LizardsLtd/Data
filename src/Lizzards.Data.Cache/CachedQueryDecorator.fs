@@ -11,7 +11,8 @@ type CacheDecoratorBase<'TReturnType>(cache: IDistributedCache) =
     let savedInCache = this.Cache.ContainsKey key
     let result: 'TReturnType =
         match savedInCache with
-        | true -> this.Cache.Get<'TReturnType> key
+        | true ->
+            this.Cache.Get<'TReturnType> key
         | false ->
             let result = fallback()
             this.Cache.Set key result
