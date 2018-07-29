@@ -1,4 +1,4 @@
-module Lizzards.Data.Test.Unit.Cache.CachingDifferentTypes
+module Lizzards.Data.Test.Unit.Cache.IAsyncQueryFixture
 
 open System
 open Xunit
