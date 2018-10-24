@@ -14,14 +14,11 @@ steps:
     inputs:
       version: '2.1.402'
 
-  - script: dotnet build --configuration $(buildConfiguration) -o output
+  - script: dotnet build --configuration $(buildConfiguration) -o output --version-suffix $(Build.BuildNumber)
     displayName: 'Build'
-
-  - script: dotnet pack --version-suffix $(Build.BuildNumber)
-    displayName: 'Create nuget package'
 
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: nuget'
     inputs:
-      PathtoPublish: 'output/*.nupkg'
+      PathtoPublish: 'output'
       ArtifactName: nugets
