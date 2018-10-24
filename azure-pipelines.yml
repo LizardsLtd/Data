@@ -13,10 +13,10 @@ steps:
   - task: DotNetCoreInstaller@0
     inputs:
       version: '2.1.402'
-  - script: dotnet build --configuration $(buildConfiguration)
+  - script: dotnet build --configuration $(buildConfiguration) -o output
   - script: dotnet pack /p:PackageVersion=$(version)
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: nuget'
     inputs:
-      PathtoPublish: '**/*.nupkg'
+      PathtoPublish: 'output/*.nupkg'
       ArtifactName: nugets
