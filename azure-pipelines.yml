@@ -15,5 +15,5 @@ steps:
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: nuget'
     inputs:
-      PathtoPublish: '$(System.DefaultWorkingDirectory)/**/*.nuget'
+      PathtoPublish: '$(Build.SourcesDirectory)/**/*.nuget'
       ArtifactName: nugets
