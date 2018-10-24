@@ -17,7 +17,7 @@ steps:
   - script: dotnet build --configuration $(buildConfiguration) -o output
     displayName: 'Build'
 
-  - script: dotnet pack /p:PackageVersion=$(version)
+  - script: dotnet pack --version-suffix $(Build.BuildNumber)
     displayName: 'Create nuget package'
 
   - task: PublishBuildArtifacts@1
