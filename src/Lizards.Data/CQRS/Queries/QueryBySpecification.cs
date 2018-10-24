@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using NLog;
+using Microsoft.Extensions.Logging;
 using Lizzards.Data.CQRS.DataAccess;
 using Lizzards.Data.Domain;
 

@@ -1,4 +1,4 @@
-﻿using NLog;
+﻿using Microsoft.Extensions.Logging;
 
 namespace Lizzards.Data.CQRS.Queries
 {
