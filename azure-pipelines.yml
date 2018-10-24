@@ -13,10 +13,13 @@ steps:
   - task: DotNetCoreInstaller@0
     inputs:
       version: '2.1.402'
+
   - script: dotnet build --configuration $(buildConfiguration) -o output
-    name: 'Build'
+    displayName: 'Build'
+
   - script: dotnet pack /p:PackageVersion=$(version)
-    name: 'Create nuget package'
+    displayName: 'Create nuget package'
+
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: nuget'
     inputs:
