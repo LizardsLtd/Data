@@ -19,4 +19,17 @@ steps:
     displayName: 'Publish Artifact: nuget'
     inputs:
       PathtoPublish: '**/*.nupkg'
-      ArtifactName: nugets
+      ArtifactName: Nuget
+
+deploy:
+  - provider: NuGet
+    server: https://www.myget.org/F/vapps-private/auth/6da17104-fec3-4e00-af31-cbd39a43b961/api/v2
+    api_key:
+      secure: lTPp/O/H3xL7BM1ANzgPY+AUlIIrQVUlnhfEep4bn1VUqvxG8OrmAnOgTocXOlFN
+    symbol_server: https://www.myget.org/F/vapps-private/symbols/
+    artifact: Nuget
+
+notifications:
+  - provider: Slack
+    incoming_webhook: https://hooks.slack.com/services/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
+    channel: '#builds'
