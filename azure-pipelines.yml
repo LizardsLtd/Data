@@ -14,11 +14,17 @@ steps:
     inputs:
       version: '2.1.402'
 
-  - script: dotnet build --configuration $(buildConfiguration) --version-suffix $(Build.BuildNumber)
+  - script: dotnet build --configuration $(buildConfiguration) -o $(Build.BinariesDirectory) --version-suffix $(Build.BuildNumber)
     displayName: 'Build'
-
-  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix $(Build.BuildNumber) -o $(Build.ArtifactStagingDirectory) src\Lizards.Data\Data.csproj
-  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix $(Build.BuildNumber) -o $(Build.ArtifactStagingDirectory) src\Lizards.Data.Azure\Data.Azure.csproj
+    
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+    inputs:
+      SourceFolder: '$(Build.BinariesDirectory)'
+      Contents: |
+        *.nupkg
+        **.nupkg
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: nuget'
