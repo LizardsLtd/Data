@@ -27,7 +27,7 @@
     private bool IsClientCreated => this.client?.IsValueCreated ?? false;
 
     public IDataReader<T> GetReader<T>()
-        where T : IAggregateRoot
+      where T : IAggregateRoot
     {
       (var databaseId, var collectionId) = this.GetConfig<T>().Result;
 
@@ -40,7 +40,7 @@
     }
 
     public IDataWriter<T> GetWriter<T>()
-        where T : IAggregateRoot
+      where T : IAggregateRoot
     {
       (var databaseId, var collectionId) = this.GetConfig<T>().Result;
 
@@ -59,7 +59,6 @@
     }
 
     private async Task<(string, string)> GetConfig<T>()
-        where T : IAggregateRoot
     {
       var databaseConfiguration = this.options.GetDatabaseConfig<T>();
 

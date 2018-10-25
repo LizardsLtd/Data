@@ -1,33 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Description>Implementation of common data access patterns.</Description>
-    <Copyright>Picums 2016 - 2017</Copyright>
-    <AssemblyTitle>Data</AssemblyTitle>
-    <VersionPrefix>0.1.0</VersionPrefix>
-    <Version>0.28.0</Version>
-    <AssemblyName>Lizzards.Data</AssemblyName>
-    <PackageTags>data;Picums</PackageTags>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/Picums/Mvc</RepositoryUrl>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-    <ProjectGuid>9A19103F-16F7-4668-BE54-9A1E7A4F7554</ProjectGuid>
-  </PropertyGroup>
-  <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <DebugType>full</DebugType>
-    <Authors>Szymon M Sasin</Authors>
     <RootNamespace>Lizzards.Data</RootNamespace>
-    <PackageId>Lizzards.Data</PackageId>
+    <AssemblyName>Lizzards.Data</AssemblyName>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="stylecop.json" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Lamar" Version="1.1.1" />
     <PackageReference Include="Lizzards.Maybe" Version="0.3.3" />

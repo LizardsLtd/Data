@@ -1,16 +1,13 @@
-﻿using System;
-using System.Threading.Tasks;
-using Lizzards.Data.CQRS.DataAccess;
-using Lizzards.Data.Domain;
-using Microsoft.Azure.Documents;
-using Microsoft.Azure.Documents.Client;
-using Microsoft.Extensions.Logging;
-
-namespace Lizzards.Data.Azure
+﻿namespace Lizzards.Data.Azure
 {
-  internal class AzureDocumentDbDataWriter<T>
-        : IDataWriter<T>
-             where T : IAggregateRoot
+  using System;
+  using System.Threading.Tasks;
+  using Lizzards.Data.CQRS.DataAccess;
+  using Microsoft.Azure.Documents;
+  using Microsoft.Azure.Documents.Client;
+  using Microsoft.Extensions.Logging;
+
+  internal class AzureDocumentDbDataWriter<T> : IDataWriter<T>
   {
     private readonly DocumentClient client;
     private readonly string collectionUri;

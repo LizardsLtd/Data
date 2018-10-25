@@ -16,7 +16,7 @@ type DecimalBasedQuery() =
         member this.Execute() =
             1M
 type DecimalBasedAsyncQuery() =
-    interface IAsyncQuery<decimal> with
+    interface IQuery<decimal> with
         member this.Execute() =
             Task.FromResult 1M
 
@@ -32,9 +32,9 @@ let ``IQuery can read decimal properly`` () =
     first_result |> should equal second_result
 
 [<Fact>]
-let ``IAsyncQuery can read decimal properly`` () =
-    let query: IAsyncQuery<decimal> = new DecimalBasedAsyncQuery() :> IAsyncQuery<decimal>
-    let cachedQuery = new AsyncCachedQueryDecorator<decimal>(query, cache) :> IAsyncQuery<decimal>
+let ``IQuery can read decimal properly`` () =
+    let query: IQuery<decimal> = new DecimalBasedAsyncQuery() :> IQuery<decimal>
+    let cachedQuery = new AsyncCachedQueryDecorator<decimal>(query, cache) :> IQuery<decimal>
     async {
         let! first_result = cachedQuery.Execute() |> Async.AwaitTask
         let! second_result = cachedQuery.Execute() |> Async.AwaitTask

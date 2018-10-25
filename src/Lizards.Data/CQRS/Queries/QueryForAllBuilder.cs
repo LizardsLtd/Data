@@ -1,17 +1,15 @@
-﻿using System.Linq;
-using Lizzards.Data.Domain;
-
-namespace Lizzards.Data.CQRS.Queries
+﻿namespace Lizzards.Data.CQRS.Queries
 {
-    public sealed class QueryForAllBuilder<TPayload>
-        : QueryBuilder<IAsyncQuery<IQueryable<TPayload>>>
-        , IQueryBuilder<IAsyncQuery<IQueryable<TPayload>>>
-            where TPayload : IAggregateRoot
-    {
-        protected override IAsyncQuery<IQueryable<TPayload>> NextBuildStep()
-            => new Query<TPayload, IQueryable<TPayload>>(
-                this.dataContext,
-                this.logger,
-                x => x.Collection(t => true));
-    }
+  using System.Linq;
+
+  public sealed class QueryForAllBuilder<TPayload>
+        : QueryBuilder<IQuery<IQueryable<TPayload>>>
+        , IQueryBuilder<IQuery<IQueryable<TPayload>>>
+  {
+    protected override IQuery<IQueryable<TPayload>> NextBuildStep()
+        => new Query<TPayload, IQueryable<TPayload>>(
+            this.dataContext,
+            this.logger,
+            x => x.Collection(t => true));
+  }
 }

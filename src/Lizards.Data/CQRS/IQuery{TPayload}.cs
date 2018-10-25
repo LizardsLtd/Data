@@ -1,7 +1,9 @@
 namespace Lizzards.Data.CQRS
 {
-  public interface IQuery<out TPayload> : IsQuery
+  using System.Threading.Tasks;
+
+  public interface IQuery<TPayload> : IsQuery
   {
-    TPayload Execute();
+    Task<TPayload> Execute();
   }
 }

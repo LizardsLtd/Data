@@ -4,7 +4,6 @@
   using System.Collections.Generic;
   using System.Linq;
   using System.Security;
-  using Lizzards.Data.Domain;
   using Microsoft.Azure.Documents.Client;
   using Microsoft.Extensions.Configuration;
 
@@ -47,7 +46,6 @@
     }
 
     internal (string, string) GetDatabaseConfig<T>()
-        where T : IAggregateRoot
         => this.databases
             .Where(x => x.IsMatchForType<T>())
             .Select(x => (x.DatabaseId, x.Collection))

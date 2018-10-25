@@ -1,13 +1,11 @@
-﻿using System;
-using System.Threading.Tasks;
-using Lizzards.Data.CQRS.DataAccess;
-using Lizzards.Data.Domain;
-using Microsoft.Extensions.Logging;
-
-namespace Lizzards.Data.CQRS.Queries
+﻿namespace Lizzards.Data.CQRS.Queries
 {
-  public sealed class Query<TPayload, TResult> : IAsyncQuery<TResult>
-            where TPayload : IAggregateRoot
+  using System;
+  using System.Threading.Tasks;
+  using Lizzards.Data.CQRS.DataAccess;
+  using Microsoft.Extensions.Logging;
+
+  public sealed class Query<TPayload, TResult> : IQuery<TResult>
   {
     private readonly IDataContext storageContext;
     private readonly ILogger logger;
