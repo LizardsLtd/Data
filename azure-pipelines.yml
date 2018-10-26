@@ -17,6 +17,8 @@ steps:
 
   - script: dotnet build --configuration $(buildConfiguration) -o $(Build.BinariesDirectory) --version-suffix $(Build.BuildNumber)
     displayName: 'Build'
+  
+  - task: DotNet
     
   - task: CopyFiles@2
     displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
