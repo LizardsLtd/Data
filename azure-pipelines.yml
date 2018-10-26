@@ -19,8 +19,9 @@ steps:
     displayName: 'Build'
   
   - task: DotNetCoreCLI@2
-    command: 'test'
-    projects: 'test/**/*.csproj'
+    inputs:
+      command: 'test'
+      projects: 'test/**/*.csproj'
     
   - task: CopyFiles@2
     displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
