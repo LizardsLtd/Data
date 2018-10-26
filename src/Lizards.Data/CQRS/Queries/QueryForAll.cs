@@ -4,9 +4,11 @@
   using System.Linq;
   using System.Threading.Tasks;
   using Lizzards.Data.CQRS.DataAccess;
+  using Lizzards.Data.Domain;
   using Microsoft.Extensions.Logging;
 
   public sealed class QueryForAll<TPayload> : IQuery<IEnumerable<TPayload>>
+    where TPayload : IAggregateRoot
   {
     private readonly IDataContext dataContext;
     private readonly ILogger logger;
