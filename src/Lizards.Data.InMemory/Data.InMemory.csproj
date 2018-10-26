@@ -20,7 +20,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <DebugType>full</DebugType>
     <RootNamespace>Lizzards.Data.InMemory</RootNamespace>
     <Authors>Szymon M Sasin</Authors>
