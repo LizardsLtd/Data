@@ -9,7 +9,7 @@ type DistributedCache(cache: IDistributedCache) =
     let item = cache.GetString(key)
     let result =
       match item with
-      | null | "" ->false
+      | null | "" -> false
       | _ -> true
     result
 

@@ -7,7 +7,7 @@
   using Lizzards.Maybe;
   using Microsoft.Extensions.Logging;
 
-  public sealed class QueryById<TPayload> : IAsyncQuery<Maybe<TPayload>>
+  public sealed class QueryById<TPayload> : IQuery<Maybe<TPayload>>
         where TPayload : IAggregateRoot
   {
     private readonly IDataContext dataContext;

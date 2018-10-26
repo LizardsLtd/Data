@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Lizzards.Data.CQRS.DataAccess;
-using Microsoft.Azure.Documents.Client;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-
-namespace Lizzards.Data.Azure
+﻿namespace Lizzards.Data.Azure
 {
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Threading.Tasks;
+  using Lizzards.Data.CQRS.DataAccess;
+  using Microsoft.Azure.Documents.Client;
+  using Microsoft.Extensions.Logging;
+  using Microsoft.Extensions.Options;
+
   public sealed class AzureDocumentDbContextInitialiser : IDataContextInitialiser
   {
     private readonly DocumentClient client;

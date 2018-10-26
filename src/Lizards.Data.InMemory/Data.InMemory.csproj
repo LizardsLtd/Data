@@ -28,10 +28,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="..\..\stylecop.json" Link="stylecop.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="NLog" Version="4.5.7" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
     <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />

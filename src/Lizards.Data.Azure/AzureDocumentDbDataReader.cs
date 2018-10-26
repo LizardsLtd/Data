@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Lizzards.Data.CQRS.DataAccess;
-using Lizzards.Data.Domain;
-using Lizzards.Maybe;
-using Microsoft.Azure.Documents.Client;
-using Microsoft.Extensions.Logging;
-
-namespace Lizzards.Data.Azure
+﻿namespace Lizzards.Data.Azure
 {
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Threading.Tasks;
+  using Lizzards.Data.CQRS.DataAccess;
+  using Lizzards.Maybe;
+  using Microsoft.Azure.Documents.Client;
+  using Microsoft.Extensions.Logging;
+
   internal sealed class AzureDocumentDbDataReader<T> : IDataReader<T>
-        where T : IAggregateRoot
   {
     private readonly DocumentClient client;
     private readonly Uri collectionUri;

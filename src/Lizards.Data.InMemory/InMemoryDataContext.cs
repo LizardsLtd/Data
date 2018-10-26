@@ -1,56 +1,50 @@
-﻿using System.Collections.Generic;
-using Lizzards.Data.CQRS.DataAccess;
-using Lizzards.Data.Domain;
-
-namespace Lizzards.Data.InMemory
+﻿namespace Lizzards.Data.InMemory
 {
-    public sealed class InMemoryDataContext : IDataContext
+  using System.Collections.Generic;
+  using Lizzards.Data.CQRS.DataAccess;
+  using Lizzards.Data.Domain;
+
+  public sealed class InMemoryDataContext : IDataContext
+  {
+    private readonly IDictionary<string, object> items;
+
+    public InMemoryDataContext() : this(new Dictionary<string, object>())
     {
-        private readonly IDictionary<string, object> items;
-
-        public InMemoryDataContext() : this(new Dictionary<string, object>())
-        {
-        }
-
-        public InMemoryDataContext(IDictionary<string, object> data)
-        {
-            this.items = data;
-        }
-
-        public void Dispose()
-        {
-        }
-
-        public IDataReader<T> GetReader<T>()
-                where T : IAggregateRoot
-            => new InMemoryReader<T>(this.GetItemsCollection<T>());
-
-        public IDataWriter<T> GetWriter<T>()
-                where T : IAggregateRoot
-            => new InMemoryWriter<T>(this.GetItemsCollection<T>());
-
-        public List<T> GetItemsCollection<T>()
-            where T : IAggregateRoot
-        {
-            var key = this.CreateKey<T>();
-
-            this.CreateCollectionIfKeyNotExist<T>(key);
-
-            List<T> result = this.items[key] as List<T>;
-
-            return result;
-        }
-
-        private void CreateCollectionIfKeyNotExist<T>(string key)
-        {
-            if (!this.items.ContainsKey(key))
-            {
-                this.items[key] = new List<T>();
-            }
-        }
-
-        private string CreateKey<T>()
-                where T : IAggregateRoot
-            => typeof(T).Name;
     }
+
+    public InMemoryDataContext(IDictionary<string, object> data) => items = data;
+
+    public void Dispose()
+    {
+    }
+
+    public IDataReader<TPayload> GetReader<TPayload>()
+        where TPayload : IAggregateRoot
+      => new InMemoryReader<TPayload>(GetItemsCollection<TPayload>());
+
+    public IDataWriter<TPayload> GetWriter<TPayload>()
+        where TPayload : IAggregateRoot
+      => new InMemoryWriter<TPayload>(GetItemsCollection<TPayload>());
+
+    public List<T> GetItemsCollection<T>()
+    {
+      var key = CreateKey<T>();
+
+      CreateCollectionIfKeyNotExist<T>(key);
+
+      var result = items[key] as List<T>;
+
+      return result;
+    }
+
+    private void CreateCollectionIfKeyNotExist<T>(string key)
+    {
+      if (!items.ContainsKey(key))
+      {
+        items[key] = new List<T>();
+      }
+    }
+
+    private string CreateKey<T>() => typeof(T).Name;
+  }
 }

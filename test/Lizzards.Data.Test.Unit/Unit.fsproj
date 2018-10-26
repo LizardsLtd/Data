@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="Cache\RunningTwoQueriesWithDifferentParameters.fs" />
     <Compile Include="Cache\CachingDifferentTypes.fs" />
-    <Compile Include="Cache\IAsyncQueryFixture.fs" />
     <Compile Include="Cache\IQueryFixture.fs" />
   </ItemGroup>
 
