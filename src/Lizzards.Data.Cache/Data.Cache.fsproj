@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Compile Include="DistributedCache.fs" />
-    <Compile Include="AsyncCachedQueryDecorator.fs" />
     <Compile Include="CachedQueryDecorator.fs" />
   </ItemGroup>
 

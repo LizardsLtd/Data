@@ -1,18 +1,18 @@
-﻿using Microsoft.Extensions.Logging;
-using Lizzards.Data.CQRS.DataAccess;
-
-namespace Lizzards.Data.CQRS.Queries
+﻿namespace Lizzards.Data.CQRS.Queries
 {
-    public abstract class QueryProvider<TResult>
+  using Lizzards.Data.CQRS.DataAccess;
+  using Microsoft.Extensions.Logging;
+
+  public abstract class QueryProvider<TResult>
+  {
+    public QueryProvider(IDataContext dataContext, ILogger logger)
     {
-        public QueryProvider(IDataContext dataContext, ILogger logger)
-        {
-            this.DataContext = dataContext;
-            this.Logger = logger;
-        }
-
-        protected ILogger Logger { get; }
-
-        protected IDataContext DataContext { get; }
+      this.DataContext = dataContext;
+      this.Logger = logger;
     }
+
+    protected ILogger Logger { get; }
+
+    protected IDataContext DataContext { get; }
+  }
 }

@@ -1,23 +1,22 @@
 namespace Lizzards.Data.Cache
 
+open System.Threading.Tasks
 open Lizzards.Data.CQRS
 open Microsoft.Extensions.Caching.Distributed
-open System
 
 [<AbstractClass>]
 type CacheDecoratorBase<'TReturnType>(cache: IDistributedCache) =
   member private this.Cache = new DistributedCache(cache)
-  member this.GetOrCreate (key:string) fallback =
+  member this.GetOrCreate (key:string) (fallback: unit -> Task<'TReturnType>): Task<'TReturnType>  =
     let savedInCache = this.Cache.ContainsKey key
     let result: 'TReturnType =
         match savedInCache with
-        | true ->
-            this.Cache.Get<'TReturnType> key
+        | true -> this.Cache.Get<'TReturnType> key
         | false ->
-            let result = fallback()
-            this.Cache.Set key result
-            result
-    result
+            let fallbackResult: 'TReturnType = fallback() |> Async.AwaitTask |> Async.RunSynchronously
+            this.Cache.Set key fallbackResult
+            fallbackResult
+    Task.FromResult result
 
 type CachedQueryDecorator<'TPayload>(internalQuery: IQuery<'TPayload>, cache: IDistributedCache) =
   inherit CacheDecoratorBase<'TPayload>(cache)
@@ -36,21 +35,3 @@ type CachedQueryDecorator<'TPayload, 'TParam1 when 'TParam1: equality>(internalQ
       this.GetOrCreate (this.GetKey param1) fallback
   member private this.GetKey(param1:'TParam1) =
     typedefof<'TPayload>.Name + "::" + param1.GetHashCode().ToString()
-
-type CachedQueryDecorator<'TPayload, 'TParam1, 'TParam2 when 'TParam1: equality and 'TParam2: equality>(internalQuery: IQuery<'TPayload, 'TParam1, 'TParam2>, cache: IDistributedCache) =
-  inherit CacheDecoratorBase<'TPayload>(cache)
-  interface IQuery<'TPayload, 'TParam1, 'TParam2> with
-    member this.Execute (param1:'TParam1, param2:'TParam2) =
-      let fallback = fun () -> internalQuery.Execute(param1, param2)
-      this.GetOrCreate (this.GetKey param1 param2) fallback
-  member private this.GetKey(param1:'TParam1) (param2: 'TParam2) : string =
-    typedefof<'TPayload>.Name + "::" + param1.GetHashCode().ToString() + "::" + param2.GetHashCode().ToString()
-
-type CachedQueryDecorator<'TPayload, 'TParam1, 'TParam2,'TParam3 when 'TParam1: equality and 'TParam2: equality and 'TParam3: equality>(internalQuery: IQuery<'TPayload, 'TParam1, 'TParam2,'TParam3>, cache: IDistributedCache) =
-  inherit CacheDecoratorBase<'TPayload>(cache)
-  interface IQuery<'TPayload, 'TParam1, 'TParam2,'TParam3> with
-    member this.Execute(param1:'TParam1, param2:'TParam2, param3: 'TParam3) =
-      let fallback = fun () -> internalQuery.Execute(param1, param2, param3)
-      this.GetOrCreate (this.GetKey param1 param2 param3) fallback
-  member private this.GetKey(param1:'TParam1) (param2: 'TParam2) (param3: 'TParam3) : string =
-    typedefof<'TPayload>.Name + "::" + param1.GetHashCode().ToString()+ "::" + param2.GetHashCode().ToString() + "::" + param3.GetHashCode().ToString()

@@ -8,6 +8,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  version: '0.30.0'
 
 steps:
   - task: DotNetCoreInstaller@0
@@ -16,6 +17,11 @@ steps:
 
   - script: dotnet build --configuration $(buildConfiguration) -o $(Build.BinariesDirectory) --version-suffix $(Build.BuildNumber)
     displayName: 'Build'
+  
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'test'
+      projects: 'test/**/*.csproj'
     
   - task: CopyFiles@2
     displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'

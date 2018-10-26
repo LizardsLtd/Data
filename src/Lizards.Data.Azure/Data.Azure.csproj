@@ -1,27 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Description>Default implementatin of differenet services in Azure.</Description>
-    <Copyright>Lizards 2016 - 2018</Copyright>
-    <AssemblyTitle>Data.Azure</AssemblyTitle>
-    <VersionPrefix>0.1.0</VersionPrefix>
-    <Version>0.27.0</Version>
-    <AssemblyName>Lizzards.Data.Azure</AssemblyName>
-    <PackageTags>azure;Picums</PackageTags>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/Picums/Mvc</RepositoryUrl>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <ProjectGuid>9A19103F-16F7-4668-BE54-9A1E7A4F7553</ProjectGuid>
-  </PropertyGroup>
-  <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <DebugType>full</DebugType>
-    <RootNamespace>Lizzards.Data.Azure</RootNamespace>
-    <Authors>Szymon M Sasin</Authors>
     <PackageId>Lizzards.Data.Azure</PackageId>
-    <AssemblyVersion>0.27.0.0</AssemblyVersion>
+    <AssemblyName>Lizzards.Data.Azure</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Lizzards.Maybe" Version="0.3.3" />

@@ -1,16 +1,14 @@
-﻿using System;
-using System.Threading.Tasks;
-using Lizzards.Data.CQRS.DataAccess;
-using Lizzards.Data.Domain;
-using Microsoft.Azure.Documents;
-using Microsoft.Azure.Documents.Client;
-using Microsoft.Extensions.Logging;
-
-namespace Lizzards.Data.Azure
+﻿namespace Lizzards.Data.Azure
 {
-  internal class AzureDocumentDbDataWriter<T>
-        : IDataWriter<T>
-             where T : IAggregateRoot
+  using System.Threading.Tasks;
+  using Lizzards.Data.CQRS.DataAccess;
+  using Lizzards.Data.Domain;
+  using Microsoft.Azure.Documents;
+  using Microsoft.Azure.Documents.Client;
+  using Microsoft.Extensions.Logging;
+
+  internal class AzureDocumentDbDataWriter<TPayload> : IDataWriter<TPayload>
+    where TPayload : IAggregateRoot
   {
     private readonly DocumentClient client;
     private readonly string collectionUri;
@@ -25,25 +23,25 @@ namespace Lizzards.Data.Azure
       this.logger = logger;
     }
 
-    public async Task InsertNew(T item)
-        => await this.InsertDocument(item);
+    public async Task InsertNew(TPayload item)
+        => await InsertDocument(item);
 
-    public async Task UpdateExisting(T item)
-        => await this.InsertDocument(item, await this.QuertyForETag(item.Id));
+    public async Task UpdateExisting(TPayload item)
+        => await InsertDocument(item, await QuertyForETag(item.Id));
 
-    private async Task<string> QuertyForETag(Guid itemId)
+    private async Task<string> QuertyForETag(object itemId)
     {
       var documentUri = UriFactory.CreateDocumentUri(
-          this.databaseId
-          , this.collectionUri
-          , itemId.ToString());
+          databaseId,
+          collectionUri,
+          itemId.ToString());
 
-      var document = await this.client.ReadDocumentAsync(documentUri);
+      var document = await client.ReadDocumentAsync(documentUri);
 
       return document?.Resource?.ETag;
     }
 
-    private async Task InsertDocument(T item, string etag = "")
+    private async Task InsertDocument(TPayload item, string etag = "")
     {
       try
       {
@@ -58,14 +56,14 @@ namespace Lizzards.Data.Azure
           };
         }
 
-        await this.client.UpsertDocumentAsync(
-              UriFactory.CreateDocumentCollectionUri(this.databaseId, this.collectionUri)
+        await client.UpsertDocumentAsync(
+              UriFactory.CreateDocumentCollectionUri(databaseId, collectionUri)
               , item
               , requestOptions);
       }
       catch (DocumentClientException exp)
       {
-        this.logger.LogError(exp.Message);
+        logger.LogError(exp.Message);
       }
     }
   }

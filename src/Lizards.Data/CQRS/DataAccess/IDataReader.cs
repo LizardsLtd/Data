@@ -1,17 +1,15 @@
 ﻿namespace Lizzards.Data.CQRS.DataAccess
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using Lizzards.Data.Domain;
-    using Lizzards.Maybe;
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Threading.Tasks;
+  using Lizzards.Maybe;
 
-    public interface IDataReader<TSource>
-        where TSource : IAggregateRoot
-    {
-        Task<IQueryable<TSource>> Collection(Func<TSource, bool> predicate);
+  public interface IDataReader<TPayload>
+  {
+    Task<IQueryable<TPayload>> Collection(Func<TPayload, bool> predicate);
 
-        Task<Maybe<TSource>> Single(Func<TSource, bool> predicate, Func<IEnumerable<TSource>, TSource> reduce);
-    }
+    Task<Maybe<TPayload>> Single(Func<TPayload, bool> predicate, Func<IEnumerable<TPayload>, TPayload> reduce);
+  }
 }
