@@ -1,7 +1,8 @@
-﻿namespace Lizzards.Data.Domain
+﻿
+namespace Lizzards.Data.Domain
 {
   public interface IAggregateRoot
   {
-    object Id { get; }
+    IIdentifier Id { get; }
   }
 }
