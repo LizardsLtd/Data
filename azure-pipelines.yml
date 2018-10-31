@@ -31,7 +31,7 @@ steps:
     displayName: 'Pack'
     inputs:
       command: 'pack'
-      nobuild: true
+      nobuild: false
       packagesToPack: 'src/**/*.csproj;src/**/*.fsproj'
       packDirectory: '$(build.BinariesDirectory)'
       configuration: 'release'
