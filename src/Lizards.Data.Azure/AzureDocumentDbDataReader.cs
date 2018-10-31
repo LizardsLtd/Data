@@ -15,7 +15,7 @@
     private readonly Uri collectionUri;
     private readonly ILogger logger;
 
-    public AzureDocumentDbDataReader(DocumentClient client, Uri collectionUri, ILogger logger)
+    internal AzureDocumentDbDataReader(DocumentClient client, Uri collectionUri, ILogger logger)
     {
       this.client = client;
       this.collectionUri = collectionUri;

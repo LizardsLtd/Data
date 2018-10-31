@@ -16,12 +16,12 @@
     private readonly ILogger logger;
     private bool disposedValue;
 
-    public AzureDocumentDbContext(AzureDocumentDbOptions options, IEventBus bus, ILogger logger)
+    public AzureDocumentDbContext(AzureDocumentDbOptions options, IEventBus bus, ILoggerFactory loggerFactory)
     {
       this.options = options;
       this.client = new Lazy<DocumentClient>(this.options.GetDocumentClient);
       this.eventBus = bus;
-      this.logger = logger;
+      this.logger = loggerFactory.CreateLogger<IDataContext>();
     }
 
     private bool IsClientCreated => this.client?.IsValueCreated ?? false;

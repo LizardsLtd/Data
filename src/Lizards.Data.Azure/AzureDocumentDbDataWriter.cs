@@ -15,7 +15,7 @@
     private readonly string databaseId;
     private readonly ILogger logger;
 
-    public AzureDocumentDbDataWriter(DocumentClient client, string databaseId, string collectionUri, ILogger logger)
+    internal AzureDocumentDbDataWriter(DocumentClient client, string databaseId, string collectionUri, ILogger logger)
     {
       this.client = client;
       this.databaseId = databaseId;
@@ -24,19 +24,19 @@
     }
 
     public async Task InsertNew(TPayload item)
-        => await InsertDocument(item);
+        => await this.InsertDocument(item);
 
     public async Task UpdateExisting(TPayload item)
-        => await InsertDocument(item, await QuertyForETag(item.Id));
+        => await this.InsertDocument(item, await this.QuertyForETag(item.Id));
 
     private async Task<string> QuertyForETag(object itemId)
     {
       var documentUri = UriFactory.CreateDocumentUri(
-          databaseId,
-          collectionUri,
+          this.databaseId,
+          this.collectionUri,
           itemId.ToString());
 
-      var document = await client.ReadDocumentAsync(documentUri);
+      var document = await this.client.ReadDocumentAsync(documentUri);
 
       return document?.Resource?.ETag;
     }
@@ -56,14 +56,14 @@
           };
         }
 
-        await client.UpsertDocumentAsync(
-              UriFactory.CreateDocumentCollectionUri(databaseId, collectionUri)
+        await this.client.UpsertDocumentAsync(
+              UriFactory.CreateDocumentCollectionUri(this.databaseId, this.collectionUri)
               , item
               , requestOptions);
       }
       catch (DocumentClientException exp)
       {
-        logger.LogError(exp.Message);
+        this.logger.LogError(exp.Message);
       }
     }
   }

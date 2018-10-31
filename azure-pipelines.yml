@@ -10,7 +10,7 @@ name: $(Date:yyyyMMdd)$(Rev:.r)
 
 variables:
   buildConfiguration: 'Release'
-  version: '0.31.1'
+  version: '0.31.2'
   nugetVersion : '$(version)-$(Build.BuildNumber)'
 
 steps:

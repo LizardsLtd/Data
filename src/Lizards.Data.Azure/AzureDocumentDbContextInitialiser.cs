@@ -15,11 +15,11 @@
     private readonly IEnumerable<AzureDatabaseCollection> databases;
     private bool disposedValue;
 
-    public AzureDocumentDbContextInitialiser(IOptions<AzureDocumentDbOptions> options, ILogger logger)
+    public AzureDocumentDbContextInitialiser(IOptions<AzureDocumentDbOptions> options, ILoggerFactory loggerFactory)
     {
       this.client = options.Value.GetDocumentClient();
       this.databases = options.Value.GetDatabasesCollections();
-      this.logger = logger;
+      this.logger = loggerFactory.CreateLogger<IDataContext>();
     }
 
     public void Dispose()
