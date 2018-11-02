@@ -1,5 +1,4 @@
-﻿
-namespace Lizzards.Data.Domain
+﻿namespace Lizzards.Data.Domain
 {
   using System;
 
@@ -10,12 +9,20 @@ namespace Lizzards.Data.Domain
 
     public Identifier(TType value) => this.value = value;
 
-    public object Value => value;
+    public object Value => this.value;
 
-    public int CompareTo(IIdentifier other) => value.CompareTo(other?.Value);
+    public static implicit operator Identifier<TType>(TType id) => new Identifier<TType>(id);
 
-    public int CompareTo(object obj) => CompareTo(obj as IIdentifier);
+    public static implicit operator TType(Identifier<TType> id) => (TType)id.Value;
 
-    public bool Equals(IIdentifier other) => value.Equals(other?.Value);
+    public int CompareTo(IIdentifier other) => this.value.CompareTo(other?.Value);
+
+    public int CompareTo(object obj) => this.CompareTo(obj as IIdentifier);
+
+    public bool Equals(IIdentifier other) => this.value.Equals(other?.Value);
+
+    public override bool Equals(object obj) => this.Value.Equals(obj);
+
+    public override int GetHashCode() => this.Value.GetHashCode();
   }
 }
